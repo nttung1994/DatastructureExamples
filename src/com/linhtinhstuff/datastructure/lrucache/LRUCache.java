@@ -22,6 +22,8 @@ public class LRUCache {
 		else {
 			// If cache is full
 			if (doublyLinkedList.getSize() == getMaxSize()) {
+				// Remove last data in Doubly LinkedList and update HashTable
+				hashMap.remove(doublyLinkedList.getTail().getKey());
 				doublyLinkedList.removeLast();
 			}
 			
